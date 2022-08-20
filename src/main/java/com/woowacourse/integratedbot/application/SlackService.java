@@ -38,7 +38,7 @@ public class SlackService {
             return;
         }
         if (response.getError().equals("channel_not_found")) {
-            throw new ChannelNotFoundException("존재하지 않는 채널입니다.");
+            throw new ChannelNotFoundException(String.format("존재하지 않는 채널입니다. channel:%s", response.getChannel()));
         }
         throw new SlackException(response.getError());
     }
