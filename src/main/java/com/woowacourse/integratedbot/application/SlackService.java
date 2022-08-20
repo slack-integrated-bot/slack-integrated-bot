@@ -10,7 +10,6 @@ import com.woowacourse.integratedbot.exception.SlackException;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Map.Entry;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,7 +24,6 @@ public class SlackService {
         this.slackToken = slackToken;
     }
 
-    @Async
     public void sendSlackMessage(final SlackPostMessageRequest request) throws Exception {
         try (Slack slack = Slack.getInstance()) {
             ChatPostMessageRequest chatRequest = request.toChatPostMessageRequest();
