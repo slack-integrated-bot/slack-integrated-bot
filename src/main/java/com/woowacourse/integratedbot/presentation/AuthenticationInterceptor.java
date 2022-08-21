@@ -30,7 +30,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
         String teamKey = TeamKeyExtractor.extractKey(request)
             .orElseThrow(() -> new UnauthorizedException("헤더에 키 값이 정상적으로 존재하지 않습니다."));
 
-        if (woowacourseTeamRespository.exisitByCode(teamKey)) {
+        if (!woowacourseTeamRespository.exisitByCode(teamKey)) {
             throw new TeamNotFoundException("존재하지 않는 팀입니다.");
         }
 
