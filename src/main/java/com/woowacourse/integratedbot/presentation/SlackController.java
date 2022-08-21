@@ -1,6 +1,5 @@
 package com.woowacourse.integratedbot.presentation;
 
-import com.slack.api.methods.request.chat.ChatPostMessageRequest;
 import com.woowacourse.integratedbot.application.SlackService;
 import com.woowacourse.integratedbot.application.request.SlackPostMessageRequest;
 import com.woowacourse.integratedbot.domain.WoowacourseTeamRespository;
@@ -27,7 +26,7 @@ public class SlackController {
 
     @PostMapping("/send")
     public ResponseEntity<Void> receive(@RequestBody final SlackPostMessageRequest request,
-                                        @RequestParam(required = false) final String code) {
+                                        @RequestParam(required = false) final String code) throws Exception {
         if (woowacourseTeamRespository.exisitByCode(code)) {
             slackService.sendSlackMessage(request);
             return ResponseEntity.ok().build();
