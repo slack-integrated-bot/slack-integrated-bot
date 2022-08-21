@@ -28,13 +28,14 @@
         - 디비에서 키값을 저장하고 있는다 -> 디비 서버를 띄워야함 -> 굳이 지금 상황에서 디비서버까지?
     - interceptor에서 권한 값을 처리한다
 
+- 회원가입 oauth 진행 시 요청 url을 woowacourse workspace로 수정하여야한다.
+
 ## 추가 기능 사항
 ### 일요일
 - Interceptor에서 팀 코드에 대한 권한 처리 (헤더값으로)
 - 보안이 필요한 코드(워크스페이스 코드 등) 숨기기
 - 서버 실행 시 인메모리 임시 데이터 세팅할 수 있도록 (Application Listener)
-- 로깅 달기 (예외 처리 수정)
-- 유저에게 dm 보낼 때 어떻게 보낼지
+- 기본적인 api 문서화
 
 ### 허가받으면 할만한
 - 인메모리 -> db
@@ -48,3 +49,30 @@
     - 알림 보내기 기능
 - 22일 (월)
     - 코치님 dm
+
+## 현재 사용중인 팀
+1. 줍줍
+   - ??
+2. 공책
+   - dm 안씀
+   - webbook url 사용 중 
+3. 꼭꼭
+   - slack oauth 사용
+   - dm 사용
+   - 채널 안씀
+   - 회원 가입 시 db에 slack email과 user id를 저장하고 user id로 보냄  
+4. 땡쿠
+   - google oauth 사용
+   - dm 사용
+   - 채널 안씀
+   - google oauth로 들어온 이메일을 저장하고 슬랙에 모든 유저에 대한 정보를 받아 id 동기화
+5. 터놓고
+   - slack oauth 사용
+   - dm 사용
+   - 채널을 모름
+   - 회원 가입 시 db에 slack email과 user id를 저장하고 user id로 보냄 
+6. 모락
+   - github oauth 사용
+   - 채널 사용
+   - dm 모름 
+   - webhook url 사용 중 
