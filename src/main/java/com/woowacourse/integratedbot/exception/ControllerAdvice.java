@@ -20,12 +20,6 @@ public class ControllerAdvice {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.from(e));
     }
 
-    @ExceptionHandler(TeamNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleTeamNotFoundException(final TeamNotFoundException e) {
-        log.warn("Team Not Found Exception : {}", e.getMessage());
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.from(e));
-    }
-
     @ExceptionHandler(UnauthorizedException.class)
     public ResponseEntity<ErrorResponse> handleUnauthorizedExceptionException(final UnauthorizedException e) {
         log.warn("Unauthorized Exception : {}", e.getMessage());
