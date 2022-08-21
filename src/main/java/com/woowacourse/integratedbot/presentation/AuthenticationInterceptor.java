@@ -3,7 +3,7 @@ package com.woowacourse.integratedbot.presentation;
 import com.woowacourse.integratedbot.domain.WoowacourseTeamRespository;
 import com.woowacourse.integratedbot.exception.TeamNotFoundException;
 import com.woowacourse.integratedbot.exception.UnauthorizedException;
-import com.woowacourse.integratedbot.support.TeamKeyExtractor;
+import com.woowacourse.integratedbot.support.AuthorizationExtractor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
@@ -27,7 +27,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             return true;
         }
 
-        String teamKey = TeamKeyExtractor.extractKey(request)
+        String teamKey = AuthorizationExtractor.extractKey(request)
             .orElseThrow(() -> new UnauthorizedException("헤더에 키 값이 정상적으로 존재하지 않습니다."));
 
         if (!woowacourseTeamRespository.exisitByCode(teamKey)) {
