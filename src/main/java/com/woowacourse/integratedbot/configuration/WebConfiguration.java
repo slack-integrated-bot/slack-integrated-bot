@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class WebConfiguration {
 
+    // TODO: 각 팀마다의 Key 값 발급해야 함
     @Bean
     public WoowacourseTeamRespository woowacourseTeamRespository() {
         return new WoowacourseTeamAlwaysOpenRepository();

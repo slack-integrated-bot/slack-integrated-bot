@@ -20,6 +20,12 @@ public class ControllerAdvice {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.from(e));
     }
 
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<ErrorResponse> handleUnauthorizedExceptionException(final UnauthorizedException e) {
+        log.warn("Unauthorized Exception : {}", e.getMessage());
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(ErrorResponse.from(e));
+    }
+
     @ExceptionHandler(SlackException.class)
     public ResponseEntity<ErrorResponse> handleSlackException(final SlackException e) {
         log.error("Slack Exception : {}", extractStackTrace(e));
