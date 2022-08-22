@@ -87,3 +87,11 @@ HTTP/1.1 200 OK
 }
 ```
 workspace에 추가되어있는 bot들도 모두 포함이 되며, bot들은 email이 null로 표기될 수 있습니다.
+
+## Required Slack bot Scopes
+- 해당 어플리케이션을 사용하기 위해서는 slack bot에서 scope 권한을 추가해주어야 합니다.
+- Bot Token Scopes
+  - `chat:write`
+  - `chat:write.public`
+  - `users:read`
+  - `users:read.email`
