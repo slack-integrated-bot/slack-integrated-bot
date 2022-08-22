@@ -38,3 +38,6 @@ out/
 
 ### logging ###
 logs/**
+
+### yml
+src/main/**/application-*.yml

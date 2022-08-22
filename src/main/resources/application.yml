@@ -1,9 +1,0 @@
-spring:
-  output:
-    ansi:
-      enabled: always
-  profiles:
-    default: local
-
-slack:
-  token: 'xoxb-3964922225381-3970348769140-xy9p4De7xzV6WRH4zBONjT8g'
