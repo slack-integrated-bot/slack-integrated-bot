@@ -1,0 +1,4 @@
+[submodule "src/main/resources/submodule"]
+	path = src/main/resources/submodule
+	url = https://github.com/slack-integrated-bot/slack-integrated-bot-secret.git
+	branch = main
