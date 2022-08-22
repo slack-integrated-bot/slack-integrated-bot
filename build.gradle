@@ -31,6 +31,13 @@ dependencies {
     implementation 'com.slack.api:slack-api-client:1.24.0'
 }
 
+processResources.dependsOn('copySecret')
+
+task copySecret(type: Copy) {
+    from 'src/main/resources/submodule'
+    into 'src/main/resources'
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
