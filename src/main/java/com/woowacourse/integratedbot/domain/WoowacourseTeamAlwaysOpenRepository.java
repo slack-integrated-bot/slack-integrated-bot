@@ -1,9 +1,8 @@
 package com.woowacourse.integratedbot.domain;
 
-public class WoowacourseTeamAlwaysOpenRepository implements WoowacourseTeamRespository {
+public class WoowacourseTeamAlwaysOpenRepository implements WoowacourseTeamRepository {
 
-    @Override
-    public boolean exisitByCode(final String code) {
+    public boolean existByCode(final String code) {
         return true;
     }
 }
