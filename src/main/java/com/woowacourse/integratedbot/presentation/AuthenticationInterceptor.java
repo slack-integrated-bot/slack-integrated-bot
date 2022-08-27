@@ -12,10 +12,10 @@ import org.springframework.web.servlet.HandlerInterceptor;
 @Component
 public class AuthenticationInterceptor implements HandlerInterceptor {
 
-    private WoowacourseTeamRepository woowacourseTeamRespository;
+    private WoowacourseTeamRepository woowacourseTeamRepository;
 
-    public AuthenticationInterceptor(WoowacourseTeamRepository woowacourseTeamRespository) {
-        this.woowacourseTeamRespository = woowacourseTeamRespository;
+    public AuthenticationInterceptor(WoowacourseTeamRepository woowacourseTeamRepository) {
+        this.woowacourseTeamRepository = woowacourseTeamRepository;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
         String key = AuthorizationExtractor.extractKey(request)
             .orElseThrow(() -> new UnauthorizedException("헤더에 키값이 정상적으로 존재하지 않습니다."));
 
-        if (!woowacourseTeamRespository.existByCode(key)) {
+        if (!woowacourseTeamRepository.existByCode(key)) {
             throw new UnauthorizedException("존재하지 않는 팀의 키값입니다.");
         }
 
