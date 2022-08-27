@@ -1,6 +1,6 @@
 package com.woowacourse.integratedbot.presentation;
 
-import com.woowacourse.integratedbot.domain.WoowacourseTeamRespository;
+import com.woowacourse.integratedbot.domain.WoowacourseTeamRepository;
 import com.woowacourse.integratedbot.exception.UnauthorizedException;
 import com.woowacourse.integratedbot.support.AuthorizationExtractor;
 import javax.servlet.http.HttpServletRequest;
@@ -12,9 +12,9 @@ import org.springframework.web.servlet.HandlerInterceptor;
 @Component
 public class AuthenticationInterceptor implements HandlerInterceptor {
 
-    private WoowacourseTeamRespository woowacourseTeamRespository;
+    private WoowacourseTeamRepository woowacourseTeamRespository;
 
-    public AuthenticationInterceptor(WoowacourseTeamRespository woowacourseTeamRespository) {
+    public AuthenticationInterceptor(WoowacourseTeamRepository woowacourseTeamRespository) {
         this.woowacourseTeamRespository = woowacourseTeamRespository;
     }
 
@@ -29,7 +29,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
         String key = AuthorizationExtractor.extractKey(request)
             .orElseThrow(() -> new UnauthorizedException("헤더에 키값이 정상적으로 존재하지 않습니다."));
 
-        if (!woowacourseTeamRespository.exisitByCode(key)) {
+        if (!woowacourseTeamRespository.existByCode(key)) {
             throw new UnauthorizedException("존재하지 않는 팀의 키값입니다.");
         }
 
