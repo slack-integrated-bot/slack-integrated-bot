@@ -2,7 +2,7 @@
 - 해당 어플리케이션의 모든 요청은 인증키값이 필수적으로 필요합니다.
 - 따라서 제공되는 키값을 항상 포함하여야 인증이 통과됩니다.
 ```http
-Key: woowateams-secret-key
+Authorization: woowateams-secret-key
 ```
 #### error
 - header에 키값이 존재하지 않는 경우
