@@ -5,9 +5,12 @@ import com.slack.api.model.Attachment;
 import com.slack.api.model.Message;
 import com.slack.api.model.block.LayoutBlock;
 import java.util.List;
+import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 
-@Getter
+@Data
+@Builder
 public class SlackPostMessageRequest {
 
     private String token;
@@ -47,9 +50,6 @@ public class SlackPostMessageRequest {
     private String iconEmoji;
 
     private boolean replyBroadcast;
-
-    private SlackPostMessageRequest() {
-    }
 
     public ChatPostMessageRequest toChatPostMessageRequest() {
         return ChatPostMessageRequest.builder()
