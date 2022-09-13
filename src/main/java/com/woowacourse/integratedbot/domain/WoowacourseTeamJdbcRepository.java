@@ -1,6 +1,7 @@
 package com.woowacourse.integratedbot.domain;
 
 import java.util.Optional;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -20,6 +21,7 @@ public class WoowacourseTeamJdbcRepository implements WoowacourseTeamRepository 
     }
 
     @Override
+    @Cacheable(value = "woowacourseTeam", unless="#result == null")
     public Optional<WoowacourseTeam> findByCode(final String code) {
         String sql = "SELECT * FROM woowacourse_team where code = ?";
         return jdbcTemplate.query(sql, woowcourseTeamRowMapper(), code)
