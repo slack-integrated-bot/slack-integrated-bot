@@ -25,6 +25,12 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    // webclient
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    // guava
+    implementation 'com.google.guava:guava:14.0'
+
     // db
     runtimeOnly 'mysql:mysql-connector-java'
     runtimeOnly 'com.h2database:h2'
