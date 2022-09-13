@@ -1,8 +1,8 @@
 package com.woowacourse.integratedbot.presentation;
 
 import com.woowacourse.integratedbot.application.SlackService;
-import com.woowacourse.integratedbot.application.request.SlackPostMessageRequest;
 import com.woowacourse.integratedbot.application.response.SlackUsersResponse;
+import java.util.Map;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +21,7 @@ public class SlackController {
     }
 
     @PostMapping("/send")
-    public ResponseEntity<Void> receive(@RequestBody final SlackPostMessageRequest request) throws Exception {
+    public ResponseEntity<Void> receive(@RequestBody final Map<String, Object> request) throws Exception {
         slackService.sendSlackMessage(request);
         return ResponseEntity.ok().build();
     }
