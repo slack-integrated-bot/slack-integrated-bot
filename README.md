@@ -5,7 +5,9 @@
 - 봇을 추가한다고 하더라도 무분별하게 봇이 증가한다면 많은 봇을 관리하기가 힘듦
 <br></br>
 - 따라서 여러 봇을 사용하고, 관리하기 편하도록 하나의 통합 봇을 구축하고자 함
-![untitled (1)](https://user-images.githubusercontent.com/69106910/191888719-03ce2759-3831-4d7a-af5d-98f238e7c83c.png)
+
+## 요청 흐름
+![untitled@2x (11)](https://user-images.githubusercontent.com/69106910/191897590-987758b9-16f8-44b3-895d-d86bd78db46b.png)
 
 ## 기능 목록
 - 원하는 채널로 메시지를 전달할 수 있다. (유저 dm 또한 유저 채널로 전달하여야한다.)
