@@ -4,3 +4,9 @@ spring:
       enabled: always
   profiles:
     default: local
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
